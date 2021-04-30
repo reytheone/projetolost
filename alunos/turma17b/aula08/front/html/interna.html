@@ -16,35 +16,42 @@
         integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
         crossorigin="anonymous"></script>
 
-    
+
 
     <script src="/js/interna.js"></script>
 
     <link rel="stylesheet" href="/css/estilo.css">
 
-    <title>Document</title>
+    <title>Pagina de Login</title>
 </head>
 
 <body onload="validaLogin()">
     <h1>EventDash - Relatório de Eventos</h1>
+    <br>
+
+    <input type="button" value="Voltar" onClick="history.go(-1)">
     <button onclick="logout()">Logout</button>
 
 
-    <div id="fotoUser"></div>
-    <div id="dadosUser"></div>
+
+    <center>
+        <div id="fotoUser"></div>
+        <center></center>
+        <div id="dadosUser"></div>
+    </center>
 
     <br><br><br>
 
-    
-    <a href="relatorio.html" target = "_blank">Relatório de Eventos por Período</a>
 
-    <br><br><br>
+    <center><a href="relatorio.html">Relatório de Eventos por Período</a></center>
 
-    <button onclick="buscarUsuarios()">Listar todos os tipos de alarmes</button>
-    <div id="usuarios"></div>
+    <br><br>
+
+    <center><button onclick="buscarAlarmes()">Listar todos os tipos de alarmes</button></center>
+    <div id="alarme"></div>
 
 
-    
+
 
 
 </body>

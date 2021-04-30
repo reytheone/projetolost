@@ -18,26 +18,26 @@ function logout() {
     window.location = "index.html";
 }
 
-function buscarUsuarios() {
-    fetch("http://localhost:8080/user/all")
+function buscarAlarmes() {
+    fetch("http://localhost:8080/alarme/all")
         .then(res => tratarRetorno(res))
 }
 
 function tratarRetorno(resposta) {
     if (resposta.status == 200) {
-        resposta.json().then(res => exibirUsuarios(res));
+        resposta.json().then(res => exibirTodos(res));
     } else {
-        document.getElementById("usuarios").innerHTML = "Nenhum usuário cadastrado!";
+        document.getElementById("usuarios").innerHTML = "Nenhum alarme cadastrado!";
     }
 }
 
-function exibirUsuarios(lista) {
-    let tabela = `<table class="table" table-sm> <tr> <th>Nome</th> <th>eMail</th> </tr>`;
+function exibirTodos(lista) {
+    let tabela = `<table class="table" table-sm> <tr> <th>Nome</th> <th>Descrição</th> </tr>`;
 
     for (i = 0; i < lista.length; i++) {
-        tabela += `<tr> <td>${lista[i].nome}</td> <td>${lista[i].email}</td> </tr>`
+        tabela += `<tr> <td>${lista[i].nome}</td> <td>${lista[i].descricao}</td> </tr>`
     }
 
     tabela += `</table>`;
-    document.getElementById("usuarios").innerHTML = tabela;
+    document.getElementById("alarme").innerHTML = tabela;
 }
